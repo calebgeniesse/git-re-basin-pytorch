@@ -312,11 +312,8 @@ def main():
     # checkpoint_b = torch.load(args.model_b)
     # model_b.dnn.load_state_dict(checkpoint_b)
 
-    # ../characterizing-pinns-failure-modes/pbc_examples/checkpoints/PINN_convection_beta_1.0_lr_1.0_seed_001.pt
-    # /Users/calebgeniesse/vis4sciml/loss-landscape-profiles/generate_loss_cubes/saved_models/PINN_checkpoints
-
     def get_pinn_model(system,u0_str,nu,beta,rho,N_f,layers,L,source,seed,lr):
-        base_path = f"/Users/calebgeniesse/vis4sciml/loss-landscape-profiles/generate_loss_cubes"
+        base_path = f"." # customize base path to the trained models here
         model_path = f"{base_path}/saved_models/PINN_checkpoints/PINN_{system}/lr_{lr}/beta_{beta}/"
         model_name = f"pretrained_{system}_u0{u0_str}_nu{nu}_beta{beta}_rho{rho}_Nf{N_f}_{layers}_L{L}_source{source}_seed{seed}.pt"
         model = torch.load(model_path+model_name, map_location=device)
