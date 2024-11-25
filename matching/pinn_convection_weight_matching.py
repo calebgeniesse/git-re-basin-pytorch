@@ -189,7 +189,6 @@ def main():
     parser.add_argument('--optimizer_name', type=str, default='LBFGS', help='Optimizer of choice.')
     parser.add_argument('--lr', type=float, default=1.0, help='Learning rate.')
     parser.add_argument('--L', type=float, default=1.0, help='Multiplier on loss f.')
-    parser.add_argument('--L_eval', type=float, default=1.0, help='Multiplier on loss f.')
 
     parser.add_argument('--xgrid', type=int, default=256, help='Number of points in the xgrid.')
     parser.add_argument('--nt', type=int, default=100, help='Number of points in the tgrid.')
@@ -209,6 +208,7 @@ def main():
     parser.add_argument('--data_loss', type=int, default=1)
     parser.add_argument('--physics_loss', type=int, default=1)
     parser.add_argument('--boundary_loss', type=int, default=1)
+    parser.add_argument('--L_eval', type=float, default=1.0, help='Multiplier on loss f (for evaluation only).')
 
     args,_ = parser.parse_known_args()
 
