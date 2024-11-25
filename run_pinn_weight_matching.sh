@@ -1,0 +1,1 @@
+python matching/pinn_convection_weight_matching.py --system=convection --beta=1.0 --lr=1.0 --model_a_seed 0 --model_b_seed 123
